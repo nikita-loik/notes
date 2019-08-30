@@ -34,3 +34,24 @@ https://github.com/KyotoSunshine/CNN-for-handwritten-kanji
 http://www.dais.unive.it/~pelillo/Didattica/Artificial%20Intelligence/Old%20Stuff/2015-2016/Slides/CNN_seminar.pdf
 https://pdfs.semanticscholar.org/3c6e/b43f7bab705115ce922ade155f64c66ccd2f.pdf
 
+# Resources
+* complete information [Electronic Dictionary Research and Development Group](http://www.edrdg.org)
+* dictionary [JMdict](http://www.edrdg.org/jmdict/edict_doc.html)
+* examples [Tanaka Corpus](http://www.edrdg.org/wiki/index.php/Tanaka_Corpus)
+* kanji components [radkfile & kradfile](http://www.edrdg.org/krad/kradinf.html)
+* kanji dictionary [kanjidict](http://www.edrdg.org/wiki/index.php/KANJIDIC_Project)
+* stroke order [SVG files](http://kanjivg.tagaini.net)
+
+# Text Encoding Conversion
+1. Check file encoding.
+```bash
+file -I file_name
+```
+2. List all available encodings.
+```bash
+iconv -l
+```
+3. Change file encoding.
+```bash
+iconv -f EUC-JP -t UTF-8 input_file_name > output_file_name
+```
