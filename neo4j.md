@@ -9,6 +9,7 @@ schema optional
 * [drivers manual](https://neo4j.com/docs/driver-manual/1.7/)
 * [neo4j](https://github.com/neo4j/neo4j-python-driver)
 * [py2neo](https://py2neo.org/v4/index.html)
+* [neomodel](https://neomodel.readthedocs.io/en/latest/)
 
 ## Cypher Query Language (CQL)
 ### A. Properties
