@@ -3,9 +3,11 @@ schema optional
 
 ## Neo4j Introduction
 * [introduction to Neo4j and graph databases](https://www.youtube.com/watch?v=oRtVdXvtD3o)
-* 
+* [chean sheet](https://neo4j.com/docs/cypher-refcard/current/)
 
-## Python Libraries
+## Python-Driver Libraries
+* [drivers manual](https://neo4j.com/docs/driver-manual/1.7/)
+* [neo4j](https://github.com/neo4j/neo4j-python-driver)
 * [py2neo](https://py2neo.org/v4/index.html)
 
 ## Cypher Query Language (CQL)
@@ -79,4 +81,9 @@ uri = f'http://neo4j:password@localhost:7474/db/data'
 4. run query using CypherMagic
 ```python
 foo = %cypher MATCH (n) RETURN count(n)
+```
+# Browser
+1. set max number of nodes to display
+```Cypher
+:config initialNodeDisplay: 1000
 ```
