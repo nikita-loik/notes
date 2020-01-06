@@ -2,8 +2,8 @@
 schema optional
 
 ## Neo4j Introduction
-* [introduction to Neo4j and graph databases](https://www.youtube.com/watch?v=oRtVdXvtD3o)
-* [chean sheet](https://neo4j.com/docs/cypher-refcard/current/)
+* [graph databases & Neo4j](https://www.youtube.com/watch?v=oRtVdXvtD3o)
+* [Neo4j cheat sheet](https://neo4j.com/docs/cypher-refcard/current/)
 
 ## Python-Driver Libraries
 * [drivers manual](https://neo4j.com/docs/driver-manual/1.7/)
@@ -20,71 +20,100 @@ schema optional
 * [Cypher manual](https://neo4j.com/docs/cypher-manual/current/introduction/)
 * [CQL cheat sheet](https://gist.github.com/DaniSancas/1d5265fc159a95ff457b940fc5046887)
 ### C. Basics
+
 1. structure elements
-`(...)` - for nodes
+
+`(...)` - for nodes<br/>
 `[...]` - for relationships (i.e. edges)
+
 ```Cypher
 () -[]-> ()
 () <-[]- ()
 () -[]- ()
 ```
+
 2. keywords & variables
-e.g. ```
+
+```Cypher
 MATCH (p:Person)-[r:ACTED_IN]->(m:Movie)
 RETURN p, r, m
 ```
-```
+
+```Cypher
 MATCH path = (p:Person)-[r:ACTED_IN]->(m:Movie)
-RETURN path                                                                   
+RETURN path  
 ```
-MATCH, RETURN - keywords (case insensitive)
-p, r, m, path - variables
+
+* MATCH, RETURN - keywords (case insensitive)
+* p, r, m, path - variables
+
 3. output types
-```
+
+3.a. get collection of nodes with label `Person`
+
+```Cypher
 MATCH (p:Person)
 RETURN p
 ```
-outputs collection of nodes with label `Person`
-```
-MATCH (p:Person)                        
+
+3.b. get a table of matching age and hight of each `Person`
+
+```Cypher
+MATCH (p:Person)
 RETURN p.age, p.height
 ```
-outputs a table of Persons and matching age and hight.
+
 4. unique constraints & indices
-```
+
+```Cypher
 CREATE CONSTRAINT ON (l:Label)
 ASSERT l.property IS UNIQUE
 ASSERT EXISTS l.property
 ```
-```                              
+
+``` Cypher
 CREATE CONSTRAINT ON ()-[r:RELATIONSHIP]->()
 ASSERT EXISTS (r.property)
 ```
-```
+
+```Cypher
 CREATE INDEX ON :Label
 CREATE INDEX ON property
 ```
+
 ### D. Using Cypher with iPython
-* [iPython Cypher extension](https://ipython-cypher.readthedocs.io/en/latest/)
+
+#### [iPython Cypher extension](https://ipython-cypher.readthedocs.io/en/latest/)
+
 1. enable CypherMagic
+
 ```python
 %load_ext cypher
 ```
+
 2. get CypherMagic parameters
+
 ```python
 %config CypherMagic
 ```
-3. change default uri
+
+3. change default URI (Uniform Resource Identifier)
+
 ```python
 uri = f'http://neo4j:password@localhost:7474/db/data'
 %config CypherMagic.uri = uri
 ```
+
 4. run query using CypherMagic
+
 ```python
 foo = %cypher MATCH (n) RETURN count(n)
 ```
+
 # Browser
+
 1. set max number of nodes to display
+
 ```Cypher
 :config initialNodeDisplay: 1000
 ```
