@@ -21,6 +21,12 @@ pip install jupyter
 python -m ipykernel install --user --name=[VIRTUAL_ENVIRONMENT_NAME]
 ```
 
+Possible alternative
+```bash
+pip install ipykernel
+ipython kernel install --user --name=[VIRTUAL_ENVIRONMENT_NAME]
+```
+
 ## D. export requirements
 ```bash
 pip freeze > requirements.txt
