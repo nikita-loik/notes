@@ -7,7 +7,7 @@ virtualenv --version
 ```
 ### A.b. create virtual environment using particular version of python
 ```bash
-virtualenv -p [python_version] [virtual_environment_name]
+virtualenv -p [PYTHON_VERSION] [VIRTUAL_ENVIRONMENT_NAME]
 ```
 ## B. activate virtual environment
 
@@ -18,7 +18,7 @@ pip install jupyter
 ```
 ### C.b. install ipykernel (whatever that actually means)
 ```bash
-python -m ipykernel install --user
+python -m ipykernel install --user --name=[VIRTUAL_ENVIRONMENT_NAME]
 ```
 
 ## D. export requirements
@@ -32,7 +32,7 @@ pip freeze > requirements.txt
 |:---:|:---:|
 |```conda --version```|```pip --version``` & ```virtualenv --verison```|
 |||
-|```conda create --name [env_name] python=3.7 -y```|```virtualenv -p [python_version] [virtual_environment_name]```|
+|```conda create --name [env_name] python=3.7 -y```|```virtualenv -p [PYTHON_VERSION] [VIRTUAL_ENVIRONMENT_NAME]```|
 |```conda activate [env_name]```|```source [env_name]/bin/activate```|
 |```conda env export > requirements.yml```|```pip freeze > requirements.txt```|
 |```conda env create -f requirements.yml```|```pip install -r requirements.txt```|
