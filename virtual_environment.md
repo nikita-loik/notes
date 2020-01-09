@@ -26,7 +26,7 @@ Possible alternative
 pip install ipykernel
 ipython kernel install --user --name=[VIRTUAL_ENVIRONMENT_NAME]
 ```
-
+When creating a new notebook select particular virtual environment.
 ## D. export requirements
 ```bash
 pip freeze > requirements.txt
