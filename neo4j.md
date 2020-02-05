@@ -5,11 +5,16 @@ schema optional
 * [graph databases & Neo4j](https://www.youtube.com/watch?v=oRtVdXvtD3o)
 * [Neo4j cheat sheet](https://neo4j.com/docs/cypher-refcard/current/)
 
-## Python-Driver Libraries
+## [Python-Driver Libraries](https://neo4j.com/developer/python/)
 * [drivers manual](https://neo4j.com/docs/driver-manual/1.7/)
 * [neo4j](https://github.com/neo4j/neo4j-python-driver)
 * [py2neo](https://py2neo.org/v4/index.html)
 * [neomodel](https://neomodel.readthedocs.io/en/latest/)
+
+## Graph Algorithms
+* [4 Graph Algorithms on Steroids](https://towardsdatascience.com/4-graph-algorithms-on-steroids-for-data-scientists-with-cugraph-43d784de8d0e) — mediocre
+* [Dijkstra's Algorithm](https://www.youtube.com/watch?v=GazC3A4OQTE) — very good
+* [A* Algorithm](https://www.youtube.com/watch?v=ySN5Wnu88nE) — very good
 
 ## Cypher Query Language (CQL)
 ### A. Properties
@@ -19,6 +24,7 @@ schema optional
 ### B. Links
 * [Cypher manual](https://neo4j.com/docs/cypher-manual/current/introduction/)
 * [CQL cheat sheet](https://gist.github.com/DaniSancas/1d5265fc159a95ff457b940fc5046887)
+* [some good solutions for Cypher](https://dzone.com/articles/tips-for-fast-batch-updates-of-graph-structures-wi)
 ### C. Basics
 
 1. structure elements
