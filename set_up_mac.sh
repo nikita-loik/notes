@@ -14,4 +14,5 @@ brew install neovim
 echo "===NEOVIM installed==="
 
 # 4. Install VS Code.
+# 5. Install Docker.
 
