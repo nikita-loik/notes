@@ -15,22 +15,22 @@ python3 --version
 pip3 install virtualenv
 virtualenv --version
 
-# 4. Install neovim:
+# 5. Install neovim:
 brew install neovim
 
-# 5. Install Java:
+# 6. Install Java:
 # this option may not work
 brew cask install java
 # then use this option
 brew tap adoptopenjdk/openjdk
 brew cask install adoptopenjdk8
 
-# 6. Install Scala:
+# 7. Install Scala:
 brew install scala
 
-# 7. Install Apache Spark:
+# 8. Install Apache Spark:
 brew install apache-spark
 
-# 8. Install VS Code.
-# 9. Install Docker.
+# 9. Install VS Code.
+# 10. Install Docker.
 
