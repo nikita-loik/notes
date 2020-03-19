@@ -19,7 +19,3 @@ brew install scala
 
 # 5. Install Apache Spark:
 brew install apache-spark
-
-# 6. Install VS Code.
-# 7. Install Docker.
-
