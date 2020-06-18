@@ -12,6 +12,11 @@ brew cask install adoptopenjdk11
 # OLD
 # brew cask install java
 java --version
+# List all available java versions:
+# /usr/libexec/java_home -V
+# Change java version:
+# export JAVA_HOME=`/usr/libexec/java_home -v [VERSION]`  # e.g. [VERSION] 1.8
+
 # 4. Install Scala:
 brew install scala
 
