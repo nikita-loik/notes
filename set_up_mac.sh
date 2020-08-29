@@ -17,39 +17,43 @@ java --version
 # Change java version:
 # export JAVA_HOME=`/usr/libexec/java_home -v [VERSION]`  # e.g. [VERSION] 1.8
 
-# 4. Install Scala:
+# 4. Install Git LFS:
+brew install git-lfs
+git lfs install
+
+# 5. Install Scala:
 brew install scala
 
-# 5. Install Spark:
+# 6. Install Spark:
 brew install apache-spark
 
-# 6. Install python:
+# 7. Install python:
 brew install python
 which python
 python --version
 which python3
 python3 --version
 
-# 7. Install virtualenv:
+# 8. Install virtualenv:
 pip3 install virtualenv
 virtualenv --version
 
-# 8. Install neovim:
+# 9. Install neovim:
 brew install neovim
 
-# 9. Install Java:
+# 10. Install Java:
 # this option may not work
 brew cask install java
 # then use this option
 brew tap adoptopenjdk/openjdk
 brew cask install adoptopenjdk8
 
-# 10. Install Scala:
+# 11. Install Scala:
 brew install scala
 
-# 11. Install Apache Spark:
+# 12. Install Apache Spark:
 brew install apache-spark
 
-# 12. Install VS Code.
-# 13. Install Docker.
+# 13. Install VS Code.
+# 14. Install Docker.
 
