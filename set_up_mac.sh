@@ -24,11 +24,15 @@ brew install scala
 brew install apache-spark
 
 # 6. Install python:
+# 6.1. Install python:
 brew install python
 which python
 python --version
 which python3
 python3 --version
+# 6.2. Upgrade pip:
+pip3 install --upgrade pip
+pip3 --version
 
 # 7. Install virtualenv:
 pip3 install virtualenv
