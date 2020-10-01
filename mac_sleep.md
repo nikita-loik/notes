@@ -20,5 +20,13 @@ Display global power settings:
 ```bash
 pmset -g
 ```
+Prevent sleep entirely
+```bash
+sudo pmset -a disablesleep 1
+```
 
+Allow sleep again
+```bash
+sudo pmset -a disablesleep 0
+```
 
