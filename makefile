@@ -13,7 +13,7 @@ KERNEL_NAME_SCALA = "$(VENV_STEM)_scala"
 # =====================================================================
 
 venv_get:
-	scripts_shell/get_venv.sh
+	scripts_sh/get_venv.sh
 
 venv_remove:
 	@echo "===removing virtual environment==="
