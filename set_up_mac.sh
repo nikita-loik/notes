@@ -37,6 +37,9 @@ python3 --version
 pip3 install --upgrade pip
 pip3 --version
 
+# PIPENV
+brew install pipenv
+
 # VIRTUALENV
 pip3 install virtualenv
 virtualenv --version
