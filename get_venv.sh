@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # CREATE AND ACTIVATE VIRTUAL ENVIRONMENT =============================
 # 1. Get working directory name (without full path).
 dir_name=${PWD##*/}
@@ -51,12 +49,7 @@ pip install -r requirements.txt
 echo "===virtual environment .${venv_name} created==="
 
 # GIT =================================================================
-# 8. If doesn't exist, add virtual environment path to .gitignore.
-grep -qxF ".${venv_name}/" .gitignore || echo ".${venv_name}/" >> .gitignore
-echo "===updated .gitignore with ".${venv_name}/"==="
-
-# 9. Add and commit .gitignore to git.
-# NB Will report 'no changes added to commit' if .gitignore stayed the same.
-git add .gitignore
-git commit -m "Update .gitignore with '.${venv_name}/'"
-echo "===added & committed .gitignore to git==="
+# NB! better add ignore statement to ./.git/info/exclude so that it doesn't clutter .gitignore.
+# 8. If doesn't exist, add virtual environment path to ./.git/info/exclude.
+grep -qxF ".${venv_name}/" ../.git/info/exclude || echo ".${venv_name}/" >> ./.git/info/exclude
+echo "===updated ./.git/info/exclude. with ".${venv_name}/"==="

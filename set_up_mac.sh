@@ -1,5 +1,5 @@
 #!/bin/zsh
-
+# [python developer guide for Mac OS X](https://devguide.python.org/setup/#macos-and-os-x)
 # XCODE
 xcode-select --install
 
@@ -7,6 +7,14 @@ xcode-select --install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew upgrade && brew update
 
+brew install openssl xz gdbm
+./configure --with-pydebug --with-openssl=$(brew --prefix openssl)
+
+CPPFLAGS="-I$(brew --prefix openssl)/include" \
+  LDFLAGS="-L$(brew --prefix openssl)/lib" \
+  ./configure --with-pydebug
+
+make -s -j2
 # =====================================================================
 # JAVA
 brew tap adoptopenjdk/openjdk
@@ -39,6 +47,12 @@ pip3 --version
 
 # PIPENV
 brew install pipenv
+
+# POETRY https://python-poetry.org/
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+source $HOME/.poetry/env
+poetry --version
+
 
 # VIRTUALENV
 pip3 install virtualenv
