@@ -127,34 +127,50 @@ https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-par
 
 
 
-# Python Package Managing using [pyenv](https://github.com/pyenv/pyenv)
+# Python-Package Managing using PYENV
 
-[pyenv tutorial](https://realpython.com/intro-to-pyenv/)
+## Prerequisites
 
-Install.
+1. [pyenv](https://github.com/pyenv/pyenv)
+2. [pyenv commands](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md)
+3. [pyenv tutorial @ realpython](https://realpython.com/intro-to-pyenv/)
+
 ```
-brew update
 brew install pyenv
 ```
 
-To access the pyenv command-line utility (NB! for `zsh`).
-```
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-```
-
+Add pyenv init to your shell to enable shims and autocompletion. 
 ```
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
 ```
+`echo $PATH | grep --color=auto "$(pyenv root)/shims"`
+
+Install a relevant Python version.
 
 ```
 pyenv install 3.8.6
 ```
-versions available through pyenv
+
+
+versions available
 `pyenv versions`
+
+versions available for installation
+`pyenv install --list | grep " 3\.[78]"`
+
 version currently active
 `pyenv version`
 
+
+
+Equivalent Commands
+|using pyenv commands|using version location|
+|:-:|:-:|
+|`pyenv versions`|`ls ~/.pyenv/versions/`|
+|`pyenv uninstall 2.7.15`|`rm -rf ~/.pyenv/versions/2.7.15`|
+
+
+pyenv versions
 
 set global version
 `pyenv global 3.6.8`
@@ -163,8 +179,6 @@ set local version
 
 
 echo 'poetry completions zsh > ~/.zfunc/_poetry' >> ~/.zshrc
-
-CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include" LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib" pyenv install --patch 3.8.0 < <(curl -sSL https://github.com/python/cpython/commit/8ea6353.patch\?full_index\=1)
 
 
 [install python 3.8.0 on BigSur using pyenv](https://dev.to/kojikanao/install-python-3-8-0-via-pyenv-on-bigsur-4oee)
