@@ -63,9 +63,21 @@ echo 'export LC_CTYPE="en_US.UTF-8"' >> ~/.zshrc
 pip install --upgrade pip
 pip --version
 
-# VIRTUALENV
+
+# PYTHON PACKAGE MANAGEMENT
+# A. VIRTUALENV (https://virtualenv.pypa.io/)
 pip install virtualenv
 virtualenv --version
+
+# B. POETRY (https://python-poetry.org/)
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+source $HOME/.poetry/env
+poetry --version
+
+# C. PIPENV
+brew install pipenv
+pipenv --version
+
 
 # 6. Install GIT LFS
 brew install git-lfs
@@ -94,12 +106,6 @@ which python
 python --version
 which python3
 python3 --version
-
-
-# POETRY https://python-poetry.org/
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-source $HOME/.poetry/env
-poetry --version
 
 # 13. Install VS Code.
 # 14. Install Docker.
