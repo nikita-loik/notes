@@ -1,38 +1,19 @@
 #!/bin/sh
 
-# 1. Install XCODE or XCODE-beta from https://developer.apple.com/download/
+# 1. Install XCODE or XCODE-beta from https://developer.apple.com/xcode/resources/
 xcode-select --install
 
 # 2. Install Oh-My-ZSH
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-
 # 2. Install & upgrade HOMEBREW
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew upgrade && brew update
 
-# 3. NEOVIM
+# 3. Install NEOVIM
 brew install neovim
 
-# 4. Install PYTHON DEPENDENCIES
-brew install openssl readline sqlite3 xz zlib gdbm bzip2
-
-
-# bzip2 is keg-only, which means it was not symlinked into /usr/local,
-# https://docs.brew.sh/FAQ#what-does-keg-only-mean
-# macOS already provides this software and installing another version in
-# parallel can cause all kinds of trouble.
-
-# If you need to have bzip2 first in your PATH run:
-echo 'export PATH="/usr/local/opt/bzip2/bin:$PATH"' >> ~/.zshrc
-echo 'export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"' >> ~/.zshrc
-
-# For compilers to find zlib, bzip2, and openssl you may need to set:
-
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib -L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/openssl@1.1/include"
-
-# 5. Install PYENV
+# 4. Install PYENV
 brew install pyenv
 
 # To access the pyenv command-line utility,
@@ -50,21 +31,40 @@ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
 # the shell configuration file since it manipulates PATH during the initialisation.
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
 
+# 5. Install Python DEPENDENCIES
+brew install openssl readline sqlite3 xz zlib gdbm bzip2
+
+
+# bzip2 is keg-only, which means it was not symlinked into /usr/local,
+# https://docs.brew.sh/FAQ#what-does-keg-only-mean
+# macOS already provides this software and installing another version in
+# parallel can cause all kinds of trouble.
+
+# If you need to have bzip2 first in your PATH run:
+echo 'export PATH="/usr/local/opt/bzip2/bin:$PATH"' >> ~/.zshrc
+echo 'export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"' >> ~/.zshrc
+
+# For compilers to find zlib, bzip2, and openssl you may need to set:
+
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib -L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/openssl@1.1/include"
+
+# 6. Install Relevant Python Version & Set It as Global
 pyenv install 3.8.6
 pyenv global 3.8.6
 
-
-# Set LANG.
-echo 'export LANG="en_US.UTF-8"' >> ~/.zshrc
-echo 'export LC_ALL="en_US.UTF-8"' >> ~/.zshrc
-echo 'export LC_CTYPE="en_US.UTF-8"' >> ~/.zshrc
-
-# PIP
+# 7. Upgrade PIP
 pip install --upgrade pip
 pip --version
 
 
-# Set PYTHON PACKAGE MANAGEMENT
+# 8. Set LANG
+# NB! Alternatively, adit relevant section of `~/.zshrc`
+echo 'export LANG="en_US.UTF-8"' >> ~/.zshrc
+echo 'export LC_ALL="en_US.UTF-8"' >> ~/.zshrc
+echo 'export LC_CTYPE="en_US.UTF-8"' >> ~/.zshrc
+
+# 9. Set Python PACKAGE MANAGEMENT
 # A. VIRTUALENV (https://virtualenv.pypa.io/)
 pip install virtualenv
 virtualenv --version
@@ -79,10 +79,10 @@ brew install pipenv
 pipenv --version
 
 
-# 6. Install GIT LFS
+# 10. Install GIT LFS
 brew install git-lfs
 
-# 8. Set GIT
+# 11. Set GIT
 git lfs install
 touch ~/.gitignore
 git config --global core.excludesFile ~/.gitignore
@@ -90,7 +90,7 @@ echo '.DS_Store' >> ~/.gitignore
 git config --list --show-origin
 
 # =====================================================================
-# JAVA
+# 12. Install JAVA
 brew tap adoptopenjdk/openjdk
 brew cask install adoptopenjdk11
 java --version
@@ -99,18 +99,18 @@ java --version
 # Change java version:
 # export JAVA_HOME=`/usr/libexec/java_home -v [VERSION]`  # e.g. [VERSION] 1.8
 
-# SCALA
+# 13. Install SCALA
 brew install scala
 
-# SPARK
+# 14. Install SPARK
 brew install apache-spark
 
-# PYTHON
+# 15. Alternative way to install PYTHON
 brew install python
 which python
 python --version
 which python3
 python3 --version
 
-# 13. Install VS Code.
-# 14. Install Docker.
+# 13. Install VS Code
+# 14. Install Docker
