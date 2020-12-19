@@ -64,7 +64,7 @@ pip install --upgrade pip
 pip --version
 
 
-# PYTHON PACKAGE MANAGEMENT
+# Set PYTHON PACKAGE MANAGEMENT
 # A. VIRTUALENV (https://virtualenv.pypa.io/)
 pip install virtualenv
 virtualenv --version
@@ -81,8 +81,13 @@ pipenv --version
 
 # 6. Install GIT LFS
 brew install git-lfs
-git lfs install
 
+# 8. Set GIT
+git lfs install
+touch ~/.gitignore
+git config --global core.excludesFile ~/.gitignore
+echo '.DS_Store' >> ~/.gitignore
+git config --list --show-origin
 
 # =====================================================================
 # JAVA
