@@ -81,12 +81,16 @@ pipenv --version
 
 # 10. Install GIT LFS
 brew install git-lfs
+git lfs install
 
 # 11. Set GIT
-git lfs install
-touch ~/.gitignore
-git config --global core.excludesFile ~/.gitignore
-echo '.DS_Store' >> ~/.gitignore
+touch ~/.gitignore_global
+git config --global core.excludesFile ~/.gitignore_global
+echo '.DS_Store' >> ~/.gitignore_global
+echo '.vscode' >> ~/.gitignore_global
+echo '.ipynb_checkpoints' >> ~/.gitignore_global
+echo '.env' >> ~/.gitignore_global
+echo '__pycache__/' >> ~/.gitignore_global
 git config --list --show-origin
 
 # =====================================================================
@@ -114,3 +118,23 @@ python3 --version
 
 # 13. Install VS Code
 # 14. Install Docker
+# 15. SQLite
+# Install SQLite3
+brew install sqlite3
+# Install SQLite browser
+brew install --cask db-browser-for-sqlite
+# 15. SSH Key
+# [SSH Key](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+# [Add SSH Key to GitHub](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
+# Generate SSH key:
+ssh-keygen -t ed25519 -C "your_email@example.com"
+# Start the ssh-agent in the background:
+eval "$(ssh-agent -s)"
+
+touch ~/.ssh/config
+
+# Edit `~/.ssh/config` — add:
+# Host *
+#  AddKeysToAgent yes
+#  UseKeychain yes
+#  IdentityFile ~/.ssh/id_ed25519
