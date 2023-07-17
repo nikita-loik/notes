@@ -3,15 +3,21 @@
 # 1. Install XCODE or XCODE-beta from https://developer.apple.com/xcode/resources/
 xcode-select --install
 
-# 2. Install Oh-My-ZSH
+# 1. Install Oh-My-ZSH
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # 2. Install & upgrade HOMEBREW
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew upgrade && brew update
 
+# 2. Install NCDU
+brew install ncdu
+brew info ncdu
+
 # 3. Install NEOVIM
 brew install neovim
+git config --global color.ui "auto"
+git config --global core.editor "nvim"
 
 # 4. Install PYENV
 brew install pyenv
@@ -70,9 +76,13 @@ pip install virtualenv
 virtualenv --version
 
 # B. POETRY (https://python-poetry.org/)
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-source $HOME/.poetry/env
+# curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+brew install poetry
+# source $HOME/.poetry/env
 poetry --version
+# to enable completion for Oh-My-Zsh
+mkdir $ZSH_CUSTOM/plugins/poetry
+poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
 
 # C. PIPENV
 brew install pipenv

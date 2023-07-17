@@ -116,7 +116,7 @@ Head, GetInspired Project St-Petersburg Branch 2009 — 2010
 1. Kinetic Investigations of the role of factor inhibiting hypoxia-inducible factor (FIH) as an oxygen sensor.
 2. Selection-based discovery of macrocyclic peptides for the next generation therapeutics.
 3. Investigating the contribution of the active site environment to the slow reaction of hypoxia-inducible factor prolyl hydroxylase domain 2 with oxygen.
-4. Human oxygen sensing may have origins in prokaryotic elongation factor Tu prolyl-hydroxylation. Proceedings of the National Academy of Sciences of The United States of America
+4. Human oxygen sensing may have origins in prokaryotic elongation factor Tu prolyl-hydroxylation.
 5. Non-enzymatic chemistry enables 2-hydroxyglutarate-mediated activation of 2-oxoglutarate oxygenases.
 6. Comparison of the substrate selectivity and biochemical properties of human and bacterial gamma-butyrobetaine hydroxylase.
 7. Substrate Selectivity Analyses of Factor Inhibiting Hypoxia-Inducible Factor.
