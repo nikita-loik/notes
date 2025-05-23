@@ -56,8 +56,8 @@ export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib -L/usr/loca
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/openssl@1.1/include"
 
 # 6. Install Relevant Python Version & Set It as Global
-pyenv install 3.8.6
-pyenv global 3.8.6
+pyenv install 3.11.12
+pyenv global 3.11.12
 
 # 7. Upgrade PIP
 pip install --upgrade pip
