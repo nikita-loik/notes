@@ -1,13 +1,18 @@
 #!/bin/sh
 
-# 1. Install XCODE or XCODE-beta from https://developer.apple.com/xcode/resources/
+# 0. Install XCODE or XCODE-beta from https://developer.apple.com/xcode/resources/
 xcode-select --install
 
-# 1. Install Oh-My-ZSH
+# 1. Install Oh-My-ZSH (https://ohmyz.sh/)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# 2. Install & upgrade HOMEBREW
+# 2. Install & upgrade HOMEBREW (https://brew.sh/)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Run these two commands in your terminal to add Homebrew to your PATH:
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/nikita/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 brew upgrade && brew update
 
 # 2. Install NCDU
